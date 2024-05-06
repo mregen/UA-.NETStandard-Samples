@@ -15,8 +15,18 @@ updates:
     groups:
       opcfoundation:
          patterns:
-         - "OPCFoundation.*"
-      
+           - "OPCFoundation.*"
+      prod-dependencies:
+        dependency-type: "production"
+        update-types:
+          - "minor"
+          - "patch"
+      dev-dependencies:
+        dependency-type: "development"
+        update-types:
+          - "minor"
+          - "patch"
+          
   - package-ecosystem: github-actions
     labels:
       - "actions"
@@ -24,3 +34,14 @@ updates:
     schedule:
       interval: "weekly"
     target-branch: "master"
+    groups:
+      prod-dependencies:
+        dependency-type: "production"
+        update-types:
+          - "minor"
+          - "patch"
+      dev-dependencies:
+        dependency-type: "development"
+        update-types:
+          - "minor"
+          - "patch"
