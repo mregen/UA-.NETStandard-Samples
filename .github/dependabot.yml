@@ -6,19 +6,16 @@
 version: 2
 updates:
   - package-ecosystem: "nuget"
-    directory: "/" # Location of package manifests
+    directory: "/"
     schedule:
-      interval: "daily"
-    registries: "*"
-    open-pull-requests-limit: 25
-    target-branch: "preview"
+      interval: "weekly"
+    target-branch: "master"
     labels: 
       - "nuget"
     groups:
       opcfoundation:
-        applies-to: version-updates
-        patterns:
-        - "OPCFoundation.*"
+         patterns:
+         - "OPCFoundation.*"
       
   - package-ecosystem: github-actions
     labels:
@@ -26,5 +23,4 @@ updates:
     directory: "./"
     schedule:
       interval: "weekly"
-    # Raise pull requests in worker branch preview
-    target-branch: "preview"
+    target-branch: "master"
